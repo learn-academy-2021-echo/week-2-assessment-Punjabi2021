@@ -93,5 +93,5 @@ console.log(test);
 }
 function vowelTester3(str){
 let test =str.search(/[a,e,i,o,u,A,E,I,O,U]/g)
-console.log(test);
+console.log(test); 
 }
