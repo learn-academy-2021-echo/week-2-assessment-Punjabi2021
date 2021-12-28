@@ -17,81 +17,109 @@
 //
 // // a) Create a test with expect statements for each of the variables provided.
 //
- //var num1 = 15
-// // Expected output: "15 is divisible by three"
- //var num2 = 0
-// // Expected output: "0 is divisible by three"
- //var num3 = -7
-// // Expected output: "-7 is not divisible by three"
-//
-// const divisbleByThree = () => {
-// if(number % 3 === 0){
-// return "Divisble by three."
-// } else {
-//   return "Not divisble by three."
-// }
-// }
-// console.log(divisbleByThree(`num1,num2,num3`));
-//
+// a describe method that lists the name of the function OR naming of the particular test.
+describe("divisbleByThree", () => {
+  var num1 = 15
+ // // Expected output: "15 is divisible by three"
+  var num2 = 0
+ // // Expected output: "0 is divisible by three"
+  var num3 = -7
+ // Expected output: "-7 is not divisible by three"
+
+  // a test/it method, nested within the describe block, that in plain words, describes that the function does.
+  it("This will take a variable and filter it in a modulus operator to see if the number is divisble by the given number otherwise it will return one of two answers is divisible by three or is not divisible by three. ", () => {
+
+    //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+    expect(divisbleByThree(num1)).toEqual("15 is divisible by three.")
+    expect(divisbleByThree(num2)).toEqual("0 is divisible by three.")
+    expect(divisbleByThree(num3)).toEqual("-7 is not divisible by three.")
+  })
+})
 //
 // // b) Create the function that makes the test pass.
-//
+
+
+const divisbleByThree = (number) => {
+if(number % 3 === 0){
+return `${number} is divisible by three.`
+} else {
+ return `${number} is not divisible by three.`
+}
+}
+
 //
 //
 // // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
 //
 // // a) Create a test with expect statements for each of the variables provided.
 //
-// var randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
-// // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
-// var randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deduction"]
-// // Expected output: ["Temperature", "Database", "Chopsticks", "Mango", "Deduction"]
-//
+//// a describe method that lists the name of the function OR naming of the particular test.
+describe("capitalizer", () => {
+  var randomNouns1 = (["streetlamp", "potato", "teeth", "conclusion", "nephew"])
+  // // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
+   var randomNouns2 = (["temperature", "database", "chopsticks", "mango", "deduction"])
+  // // Expected output: ["Temperature", "Database", "Chopsticks", "Mango", "Deduction"]
+
+  // a test/it method, nested within the describe block, that in plain words, describes that the function does.
+  it("This function will take the word identify the first letter of the word and uppercase the letter. Returning a word with an uppercase first letter of the word.", () => {
+
+    // an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+    expect(capitalizer(["streetlamp", "potato", "teeth", "conclusion", "nephew"])).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
+    expect(capitalizer(["temperature", "database", "chopsticks", "mango", "deduction"])).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
+  })
+})
 //
 //
 // // b) Create the function that makes the test pass.
-//
-//
-var randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
 
-var randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deduction"]
-
-// declare a function that takes in an array
+//
 const capitalizer = (array) => {
-  // create a local variable that maps through the array
   let eachItem = array.map(value => {
-    // with each value access the first index and capitalize the letter then concatenate the remainder of the word
-    return value[0].toUpperCase() + value.substring(1)
-  })
-  // return the local variable joined into a string
-  return eachItem.join(" ")
+     return value[0].toUpperCase() + value.substring(1)
+})
+   return eachItem
 }
-// logging the function and pass in the array
-console.log(capitalizer(`randomNouns1,randomNouns2`))
 //
 // // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 //
 // // a) Create a test with expect statements for each of the variables provided.
-//
- var vowelTester1 = "learn"
-// // Expected output: 1
-// var vowelTester2 = "academy"
-// // Expected output: 0
-// var vowelTester3 = "challenges"
-// // Expected output: 2
-//
-//run a filter compared to a vowels the index number will indicate what place it holds.
-//
-// // b) Create the function that makes the test pass.
-function vowelTester1(str){
-let test =str.search(/[a,e,i,o,u,A,E,I,O,U]/g)
-console.log(test);
-}
-function vowelTester2(str){
-let test =str.search(/[a,e,i,o,u,A,E,I,O,U]/g)
-console.log(test);
-}
-function vowelTester3(str){
-let test =str.search(/[a,e,i,o,u,A,E,I,O,U]/g)
-console.log(test);
-}
+// //
+// a describe method that lists the name of the function OR naming of the particular test.
+describe("firstFunction", () => {
+  var vowelTester1 = "learn"
+// // // Expected output: 1
+ var vowelTester2 = "academy"
+// // // Expected output: 0
+ var vowelTester3 = "challenges"
+// // // Expected output: 2
+  // a test/it method, nested within the describe block, that in plain words, describes that the function does.
+  it("run a filter compared to a vowels the index number will indicate what place it holds", () => {
+
+    //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+    expect(firstFunction(vowelTester1)).toEqual(1)
+    expect(firstFunction(vowelTester2)).toEqual(0)
+    expect(firstFunction(vowelTester3)).toEqual(2)
+
+  })
+})
+const firstFunction= (stringArgument)=> {
+  for(let i=0; i<stringArgument.length; i++){
+    if (stringArgument.charAt(i) === 'a' ||stringArgument.charAt(i) === 'e' ||stringArgument.charAt(i) === 'i' ||stringArgument.charAt(i) === 'o' ||stringArgument.charAt(i) === 'u'||stringArgument.charAt(i) === 'A' ||stringArgument.charAt(i) === 'E' ||stringArgument.charAt(i) === 'I' ||stringArgument.charAt(i) === 'O' ||stringArgument.charAt(i) === 'U') {// if this character is a vowel
+      return i
+    }
+  }
+};
+
+//b) Create the function that makes the test pass.
+
+/*
+PSEUDO CODE FOR RETURNING THE INDEX OF THE FIRST vowel
+  Goal: filter index zero by aeiou and identify the INDEX
+
+  Run the word through a map (this will convert to array)
+  For each letter in the map, filter if this is a vowel/ aeiou
+    if true = return the index
+    else false = check the next letter
+
+
+*/
